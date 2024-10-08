@@ -1,3 +1,10 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -105,3 +112,59 @@ body {
     font-size: 0.9rem;
     opacity: 0.8;
 }
+
+
+.star {
+    position: absolute;
+    top: -20px;
+    color: #fff;
+    animation: animate 8s linear forwards;
+}
+
+.star::before {
+    content: "\f005";
+    font-family: FontAwesome;
+    text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 50px #fff;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .star {
+        font-size: 8px;
+    }
+}
+
+#CText{
+    font-family: arial;
+    color: black;
+    font-size: 1rem;
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet, red); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    animation: rainbow-animation 35s linear infinite;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@keyframes rainbow-animation {
+    to {
+        background-position: 250vh;
+    }
+}
+
